@@ -11,9 +11,18 @@ before_install:
 - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH
   ; fi`
 - docker build -f Dockerfile -t $REPO:$COMMIT .
-- docker tag $REPO:$COMMIT $REPO:$TAG
-- docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
-- docker push $REPO
+
+install:
+  - console.log("install nothing!")
+
+script:
+  - console.log("no tests!")
+
+after_success:
+  - docker tag $REPO:$COMMIT $REPO:$TAG
+  - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+  - docker push $REPO
+
 env:
   global:
   - secure: M9Nr+P8FsH4ikcv4ZEzoe5WEqsEvvv5evGincs2FLA3uy6CO2AVjwpXV2s2EnMYBVmtW/XVDsKIkjgyDKh6umnp9xBGW8e0ObdwpxwFmEBgPaAQjKqKQXcWfTbeijBP8R6v3qPjZNCPHMdYNAcrm8qzW8y21tLh8BAcd34opXeHzDg6DZISySPEr8WvirTQcuqRuOncP2N9jGv4mDzP/Nlmkwc52cjAcC2pA2LOZOPcKJN2uwPjlzzIVw4ipPp8tbiA81ZSh+0JWzbOpblixZ1Uci5+oMMVlvyxSVeKdCH1za8ALSP1uI5zXNkgY26UcXP6XkoX/QlmjvnNlbLorCI4fQCsmOaA5v+6dK2HTg/d+wg5XgLSj/K+ykB6C+T5PQh3fte7FUzxSsOMXANLKZIaCtjgYFbp+dmtadGX5FMWql7gckCV8U/X344XRq23KRehnP71naGVEC86sxIoCzXIQDTUIyzIgfwqk8F5ghrS6i6/28CZmmmm2KTQzqAsow7tCUgOYUoJawWstzJgpGKPBVTV+8pFobp/NnLz0oSscdSmYhrLWTHRqCOf8bk3P9U8kPrYvXq4rYsXrtlqAJLqp+NnuhwcG91HmE56LVGwEH34NB6ZVlnetntVvFWcQc6jV17pq9EfzFdaXZr/933e/Q6gdNbfhSuoRsQlEW+Q=

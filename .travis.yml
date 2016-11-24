@@ -3,7 +3,7 @@ sudo: required
 services:
 - docker
 
-language: node_js
+language: php
 
 before_install:
 - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
@@ -15,7 +15,7 @@ before_install:
 install: true
 
 script:
-  - console.log('no tests!')
+  - echo "no test!"
 
 after_success:
   - docker tag $REPO:$COMMIT $REPO:$TAG

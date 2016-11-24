@@ -13,10 +13,10 @@ before_install:
 - docker build -f Dockerfile -t $REPO:$COMMIT .
 
 install:
-  - console.log("install nothing!")
+  - console.log('install nothing!')
 
 script:
-  - console.log("no tests!")
+  - console.log('no tests!')
 
 after_success:
   - docker tag $REPO:$COMMIT $REPO:$TAG

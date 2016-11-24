@@ -12,8 +12,7 @@ before_install:
   ; fi`
 - docker build -f Dockerfile -t $REPO:$COMMIT .
 
-install:
-  - console.log('install nothing!')
+install: true
 
 script:
   - console.log('no tests!')

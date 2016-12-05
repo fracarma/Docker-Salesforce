@@ -10,7 +10,7 @@ RUN npm install -g jsforce-metadata-tools
 
 RUN apk add ruby ruby-bundler
 RUN rm -rf /var/cache/apk/*
-RUN wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+RUN wget --no-check-certificate -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 # Install Heroku Lightning CLI
 

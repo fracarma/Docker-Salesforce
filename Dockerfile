@@ -7,6 +7,8 @@ RUN apk add --no-cache alpine-sdk
 
 # Install JSForce
 RUN npm install -g jsforce-metadata-tools
+RUN npm install -g eslint
+RUN npm install -g salesforce-lightning-cli
 
 # Install Heroku Toolbelt
 
@@ -19,10 +21,9 @@ RUN wget --no-check-certificate -qO- https://toolbelt.heroku.com/install.sh | sh
 ENV PATH /usr/local/heroku/bin:$PATH
 
 
-# Install Heroku Lightning CLI
+# Install Heroku Lightning CLI - TODO
 
-
-RUN heroku plugins:install salesforce-lightning-cli
+# RUN heroku plugins:install salesforce-lightning-cli
 
 # Clean apk
 

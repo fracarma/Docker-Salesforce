@@ -20,7 +20,7 @@ ENV PATH /usr/local/heroku/bin:$PATH
 
 
 # Install Heroku Lightning CLI
-
+RUN heroku --version
 RUN ls -l /root/
 RUN ls -l /root/.local
 RUN ls -l /root/.local/share

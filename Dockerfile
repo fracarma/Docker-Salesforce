@@ -21,6 +21,12 @@ ENV PATH /usr/local/heroku/bin:$PATH
 
 # Install Heroku Lightning CLI
 
+RUN ls -l /root/
+RUN ls -l /root/.local
+RUN ls -l /root/.local/share
+RUN ls -l /root/.local/share/heroku
+RUN ls -l /root/.local/share/heroku/cli
+
 RUN heroku plugins:install salesforce-lightning-cli
 
 # Clean apk

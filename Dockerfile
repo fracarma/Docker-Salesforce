@@ -1,10 +1,9 @@
 FROM mhart/alpine-node:7.2.0
 
-# Do everything as root
-RUN su
 
 RUN apk update && apk upgrade
 RUN apk add wget
+RUN apk add alpine-sdk
 
 # Install JSForce
 RUN npm install -g jsforce-metadata-tools

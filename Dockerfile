@@ -11,7 +11,8 @@ RUN npm install -g jsforce-metadata-tools
 # Install Heroku Toolbelt
 
 RUN apk add ruby ruby-bundler
-RUN ruby ruby-irb ruby-rake ruby-io-console ruby-bigdecimal ruby-json ruby-bundler \
+RUN apk --update add \
+    ruby ruby-irb ruby-rake ruby-io-console ruby-bigdecimal ruby-json ruby-bundler \
     libstdc++ tzdata bash ca-certificates \
     && echo 'gem: --no-document' > /etc/gemrc
 RUN wget --no-check-certificate -qO- https://toolbelt.heroku.com/install.sh | sh

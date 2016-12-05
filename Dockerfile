@@ -16,11 +16,12 @@ RUN apk --update add \
     libstdc++ tzdata bash ca-certificates \
     && echo 'gem: --no-document' > /etc/gemrc
 RUN wget --no-check-certificate -qO- https://toolbelt.heroku.com/install.sh | sh
+ENV PATH /usr/local/heroku/bin:$PATH
 
 
 # Install Heroku Lightning CLI
 
-RUN /usr/local/heroku/bin/heroku plugins:install salesforce-lightning-cli
+RUN heroku plugins:install salesforce-lightning-cli
 
 # Clean apk
 

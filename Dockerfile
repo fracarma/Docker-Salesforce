@@ -15,8 +15,8 @@ RUN apk --update add \
     ruby ruby-irb ruby-rake ruby-io-console ruby-bigdecimal ruby-json ruby-bundler \
     libstdc++ tzdata bash ca-certificates \
     && echo 'gem: --no-document' > /etc/gemrc
-
-RUN gem install heroku
+RUN wget --no-check-certificate -qO- https://toolbelt.heroku.com/install.sh | sh
+ENV PATH /usr/local/heroku/bin:$PATH
 
 
 # Install Heroku Lightning CLI

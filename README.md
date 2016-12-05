@@ -2,12 +2,18 @@
 
 [![Build Status](https://travis-ci.org/fracarma/Docker-Salesforce.svg?branch=master)](https://travis-ci.org/fracarma/)
 
-Docker image with [JSForce](https://jsforce.github.io/blog/posts/20151106-jsforce-metadata-tools.html) installed.
+Docker image with many SalesForce utilites installed.
 This image is based on [mhart/alpine-node:7.2.0](https://github.com/mhart/alpine-node).
-At the moment, just jsforce-metadata-tools is installed on the image. The idea is to add any tool you can need for the Salesforce Continous Integration and Development process.
+
 
 The current tags are:
 * latest
+
+## Packages Installed
+
+* [JSForce](https://jsforce.github.io/blog/posts/20151106-jsforce-metadata-tools.html)
+* [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
+* [Lightning CLI Heroku Plugin](https://www.npmjs.com/package/salesforce-lightning-cli)
 
 ## Examples
 ```

@@ -8,7 +8,7 @@ RUN apk add --no-cache wget
 RUN apk add --no-cache alpine-sdk
 
 # Install JSForce
-apk add nodejs nodejs-npm
+RUN apk add nodejs nodejs-npm
 RUN npm install -g jsforce-metadata-tools
 
 # Install Heroku Toolbelt

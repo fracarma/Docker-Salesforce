@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk-alpine
 
 
-ENV SONAR_SCANNER_VERSION 2.8
+ENV SONAR_SCANNER_VERSION 3.0.3.778
 
 RUN apk update && apk upgrade
 RUN apk add --no-cache wget
@@ -18,7 +18,7 @@ RUN npm install -g heroku-cli
 
 RUN apk add --no-cache wget && \
 	mkdir -p -m 777 /sonar-scanner && \
-	wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-$SONAR_SCANNER_VERSION.zip -O /sonar-scanner/sonar-scanner.zip && \
+	wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION.zip -O /sonar-scanner/sonar-scanner.zip && \
 	cd /sonar-scanner && \
 	unzip -q sonar-scanner.zip && \
 	rm sonar-scanner.zip

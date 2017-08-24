@@ -12,13 +12,7 @@ RUN apk add nodejs nodejs-npm
 RUN npm install -g jsforce-metadata-tools
 
 # Install Heroku Toolbelt
-
 RUN npm install -g heroku-cli
-
-# Install Heroku Lightning CLI
-
-
-RUN heroku plugins:install salesforce-lightning-cli
 
 # Install sonar-scanner 
 
